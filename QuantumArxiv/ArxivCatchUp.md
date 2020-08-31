@@ -35,7 +35,30 @@ And the question investigated in this paper is whether we can find an efficient 
 
 #### 2. Main Result
 
-They study this problem in the quantum query model.
+They study this problem in the quantum query model.They studied three types of oracles: 1. Canonical state preparation oracles 2. Hear-random unitaries 3. Fouriere sampling circuits
+
+Here are two results:
+
+1. For first two types of quantum oracles: for any $\epsilon \ge \frac{1}{poly(n)}$, any quantum query algorithm for $(2+\epsilon)-XHOG$ requires at least $\Omega\left(\frac{2^{n/4}}{poly(n)} \right)$.
+2. For Fourier sampling circuits oracle: Any $1-$query quantum algorithm for $b-XHOG$ with Fourier Sampling circuits achieves $b\le 3$. (This means the naive algorithm of simply running the circuit is optimal.)
+
+#### 3. Techniques
+
+For canonical state preparation oracle, they use a simple collision-finding algorithm and the result of [[ARU14]](https://arxiv.org/abs/1404.6898) 
+
+For Haar-Random unitary oracle, they show it is equivalent to canonical state preparation oracle as resources.
+
+For Fourier-Sampling circuit oracle, 
+
+#### My Comments
+
+Here are some problems from me:
+
+1.  It seems this paper does not really provide any evidence that quantum algorithm can give a better than 2 result in polynomial time. I am really curious what the exponential query lower bound implies, as it is obviously the quantum supremacy campare the $b$ got by polynomial-time classical and quantum algorithms, so this can provide a separation for classical and quantum algorithms. But there is no hardness result for classical query complexity of this problem then how could it be used as a separation?
+
+
+
+
 
 ## 2. Query Complexity
 
