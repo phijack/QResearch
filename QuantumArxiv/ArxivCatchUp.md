@@ -48,13 +48,13 @@ For canonical state preparation oracle, they use a simple collision-finding algo
 
 For Haar-Random unitary oracle, they show it is equivalent to canonical state preparation oracle as resources.
 
-For Fourier-Sampling circuit oracle, 
+For Fourier-Sampling circuit oracle, they use the polynomial method of Beals et al..
 
 #### My Comments
 
-Here are some problems from me:
+Here are some problems from me: It seems this paper does not really provide any evidence that quantum algorithm can give a better than 2 result in polynomial time. I am really curious what the exponential query lower bound implies, as it is obviously the quantum supremacy campare the $b$ got by polynomial-time classical and quantum algorithms, so this can provide a separation for classical and quantum algorithms. But there is no hardness result for classical query complexity of this problem then how could it be used as a separation? 
 
-1.  It seems this paper does not really provide any evidence that quantum algorithm can give a better than 2 result in polynomial time. I am really curious what the exponential query lower bound implies, as it is obviously the quantum supremacy campare the $b$ got by polynomial-time classical and quantum algorithms, so this can provide a separation for classical and quantum algorithms. But there is no hardness result for classical query complexity of this problem then how could it be used as a separation?
+I also curious about whether their techniques are novel or not, because it seems they just cite some previous techniques and with some observations then they can get the final result.
 
 
 
@@ -65,4 +65,8 @@ Here are some problems from me:
 ###1. An Optimal Separation of Randomized and Quantum Query Complexity 
 
 [Arxiv:2008.10223](https://arxiv.org/pdf/2008.10223.pdf)
+
+### 2. Separations in query complexity Based on Pointer Functions
+
+[Arxiv:1506.04719](https://arxiv.org/abs/1506.04719)
 
