@@ -66,6 +66,8 @@ I also curious about whether their techniques are novel or not, because it seems
 
 [Arxiv:2008.10223](https://arxiv.org/pdf/2008.10223.pdf)
 
+This paper provides an $\mathrm{O}(1)$ and $\mathrm{\Omega}(n^{1-\epsilon})$ separation between Quantum Query Complexity and Randomized Query Complexity.
+
 ### 2. Separations in query complexity Based on Pointer Functions
 
 [Arxiv:1506.04719](https://arxiv.org/abs/1506.04719)
