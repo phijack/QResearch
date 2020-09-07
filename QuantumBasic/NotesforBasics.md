@@ -128,7 +128,22 @@ $$
 $$
 The completeness equation helps confirm that $\sum_m p(m) =1$.
 
+### 4. Composite system
 
+**Postulate 4** The state space of composite system is the tensor product of the state space of the component physical systems.
+
+**Entanglement**, *Bell states*, *Bell pairs*, *EPR pairs*.
+$$
+00: \Ket \psi \rightarrow \frac{\Ket{00}+\Ket{11}}{\sqrt{2}}\\
+01: \Ket \psi \rightarrow \frac{\Ket{00}-\Ket{11}}{\sqrt{2}}\\
+10: \Ket \psi \rightarrow \frac{\Ket{01}+\Ket{10}}{\sqrt{2}}\\
+11: \Ket \psi \rightarrow \frac{\Ket{01}-\Ket{10}}{\sqrt{2}}
+$$
+These also provide a coding which called superdense code. This means that Alice can use an entangled pair such that Alice can transmit two bits by sending one qubit.
+
+### 5. Density operator
+
+If 
 
 # PCP Theorem and Its Quantum Edition
 
