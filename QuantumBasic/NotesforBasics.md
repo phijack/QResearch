@@ -143,7 +143,18 @@ These also provide a coding which called superdense code. This means that Alice 
 
 ### 5. Density operator
 
-If 
+We can use a way to represent the state $\rho$. $p_i$ stands for the probability of $\Ket{\psi_i}$ result. That is called the *ensemble of pure states*.
+$$
+\rho = \sum_i p_i\Ket{\psi_i}\Bra{\psi_i}
+$$
+
+So we can know that all states can be represented as a Hermitian matrix with its trace is $1$, and all $2\times 2$ Hermitian matrix can be represented by the linear combination of Pauli matrices. So we have $\rho = \frac{I+\vec{r}\cdot \vec{\sigma}}{2}$, for any $\rho$. That means we can use a vector in 3-dimension space $\vec{r}$ represent the state $\rho$.This method is called the Bloch Ball, any pure state will be on the sphere of this ball.
+
+**Unitary freedom in the ensemble for density matrices** 
+
+The sets $\Ket{\psi_i}$ and $\Ket{\varphi_j}$ generate the same density matrix if and only if $\Ket{\psi_i} = \sum_j U_{ij} \Ket{\varphi_j}$. Here $U_{ij}$ is the entry of a unitary matrix $U$, with indices $i$ and $j$.(Does that means the density matrix will not change in the closed quantum system?)
+
+
 
 # PCP Theorem and Its Quantum Edition
 
