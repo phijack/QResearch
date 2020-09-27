@@ -152,7 +152,20 @@ So we can know that all states can be represented as a Hermitian matrix with its
 
 **Unitary freedom in the ensemble for density matrices** 
 
-The sets $\Ket{\psi_i}$ and $\Ket{\varphi_j}$ generate the same density matrix if and only if $\Ket{\psi_i} = \sum_j U_{ij} \Ket{\varphi_j}$. Here $U_{ij}$ is the entry of a unitary matrix $U$, with indices $i$ and $j$.(Does that means the density matrix will not change in the closed quantum system?)
+The sets $\Ket{\psi_i}$ and $\Ket{\varphi_j}$ generate the same density matrix if and only if $\Ket{\psi_i} = \sum_j U_{ij} \Ket{\varphi_j}$. Here $U_{ij}$ is the entry of a unitary matrix $U$, with indices $i$ and $j$.(Does that means the density matrix will not change in the closed quantum system? No, this is right multiplication of $U$, while the change in close system is left multiplication.)
+
+###6. Schmidt decomposition and purification
+
+Suppose $\Ket{\psi}$ is a pure state of a composite system, $AB$. Then there exist orthonormal states $\Ket{i_A}$ for system $A$, and orthonormal states $\Ket{i_B}$ for system $B$ such that 
+$$
+\Ket{\psi} = \sum_i \lambda_i \Ket{i_A}\Ket{i_B}
+$$
+where $\lambda_i$ are non-negative real numbers satisfying $\sum_i\lambda_i^2 = 1$ known as *Schmidt co-efficients*.
+
+It is a different name of Singular Value Decomposition.
+
+So the $\lambda_i$ or say Schmidt Number quantifies the entanglement of A and B, because they are invariant under unitary transformation.
+
 
 
 
