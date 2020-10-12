@@ -27,7 +27,7 @@ This postulate talks about the quantum gate. It points out that a matrix represe
 $$
 i\hbar\frac{d\Ket\psi}{dt}=H\Ket\psi
 $$
-$H$ is a fixed Hermition operator( unitary operator), called the *Hamiltonian* of the closed system.
+$H$ is a fixed Hermition operator, called the *Hamiltonian* of the closed system.
 
 ---
 
@@ -156,6 +156,8 @@ The sets $\Ket{\psi_i}$ and $\Ket{\varphi_j}$ generate the same density matrix i
 
 ###6. Schmidt decomposition and purification
 
+#####Schmidt decomposition
+
 Suppose $\Ket{\psi}$ is a pure state of a composite system, $AB$. Then there exist orthonormal states $\Ket{i_A}$ for system $A$, and orthonormal states $\Ket{i_B}$ for system $B$ such that 
 $$
 \Ket{\psi} = \sum_i \lambda_i \Ket{i_A}\Ket{i_B}
@@ -165,6 +167,18 @@ where $\lambda_i$ are non-negative real numbers satisfying $\sum_i\lambda_i^2 = 
 It is a different name of Singular Value Decomposition.
 
 So the $\lambda_i$ or say Schmidt Number quantifies the entanglement of A and B, because they are invariant under unitary transformation.
+
+#####purification
+
+Suppose we have a state $\rho^A$ of a quantum system $A$, it is possible to introduce a system $R$, and define a pure state $\Ket{AR}$ for the joint system $AR$ such that $\rho^A = tr_R(\Ket{AR}\Bra{AR})$, here $R$ is called the reference system, which is a fictitious system.
+
+In order to get this system $R$, we can directly use the same state space as system $A$ with orthogonal basis states $\Ket{i^R}$ and define
+$$
+\Ket{AR} \equiv \sum_i \sqrt{p_i} \Ket{i^A}\Ket{i^R}.
+$$
+
+### 7. Bell's Inequality
+
 
 
 
