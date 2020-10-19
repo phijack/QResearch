@@ -181,7 +181,26 @@ $$
 
 
 
+## Quantum Circuit
 
+### 1. Single qubit circuit
+
+Important gates are Pauli matrices, Hadamard gate, phase gate(S) and $\frac{\pi}{8}$ gate(T)
+
+An important class of gates is called *rotation operators*:
+$$
+R_x(\theta) \equiv e^{-i\theta X/2} = \cos \frac{\theta}{2}I - i\sin \frac{\theta}{2}X\\
+R_y(\theta) \equiv e^{-i\theta Y/2} = \cos \frac{\theta}{2}I - i\sin \frac{\theta}{2}Y\\
+R_z(\theta) \equiv e^{-i\theta Z/2} = \cos \frac{\theta}{2}I - i\sin \frac{\theta}{2}Z\\
+R_{\hat{n}}(\theta) \equiv \exp (-i\theta \hat{n}\cdot \vec{\sigma}/2) = \cos(\frac{\theta}{2})I - i\sin(\frac{\theta}{2})(n_xX+n_yY+n_zZ)
+$$
+The $\vec{\sigma}$ denotes the three component vector $(X,Y,Z)$ of Pauli matrices in the last line.
+
+**Z-Y decomposition for a single qubit** Suppose $U$ is a unitary operation on a single qubit. Then there exist real numbers $\alpha, \beta, \gamma$ and $\delta$ such that
+$$
+U = e^{i\alpha}R_z(\beta)R_y(\gamma)R_z(\delta)
+$$
+ Corollary: Suppose 
 
 # PCP Theorem and Its Quantum Edition
 
