@@ -202,6 +202,10 @@ U = e^{i\alpha}R_z(\beta)R_y(\gamma)R_z(\delta)
 $$
  Corollary: Suppose 
 
+### 3. Universal quantum gate
+
+
+
 # PCP Theorem and Its Quantum Edition
 
 # Circuit and Quantum Circuit Lower Bounds
