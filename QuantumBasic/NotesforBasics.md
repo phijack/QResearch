@@ -13,6 +13,12 @@ $$
 
 Here we can get our states of a qubit $\Ket{0} = \begin{bmatrix}0\\1\end{bmatrix}$ , and $\Ket 1 = \begin{bmatrix}1\\0\end{bmatrix}$. This is an orthogonal base of the state space of a qubit. We can also find another orthogonal base, which are $\Ket + = \begin{bmatrix}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\end{bmatrix}$ and $\Ket - = \begin{bmatrix}\frac{1}{\sqrt{2}}\\-\frac{1}{\sqrt{2}}\end{bmatrix}$. We usually use $\Ket \varphi$ to stand for the state of a common qubit, which is a linear combination of two base states, that is called superposition in quantum. it looks like $\Ket \varphi = \alpha \Ket0+\beta\Ket1$.
 
+**Inner Product**: is a function from $V \times V$ to $\mathbb{R}$, which satisfies the following three properties:
+
+1. Linearity on the second component: $(\Ket v, \sum_i \lambda_i \Ket{w_i}) = \sum_i \lambda_i(\Ket v, \Ket{w_i})$.
+2. $(\Ket v, \Ket w) = (\Ket w, \Ket v)^*$.
+3. $\forall \Ket v,(\Ket v, \Ket v) \geq 0$. The equality holds if and only if $\Ket v$ is a zero element.
+
 ### 2. Evolution
 
 **Postulate 2** The evolution of a closed quantum system is described by a *unitary transformation*.
@@ -203,6 +209,50 @@ $$
  Corollary: Suppose 
 
 ### 3. Universal quantum gate
+
+
+
+## Quantum Fourier transform and its application 
+
+### 1. Definition
+
+$$
+\Ket j \longrightarrow \frac{1}{\sqrt{N}}\sum_{k=0}^{N-1} e^{i2\pi jk/N}\Ket k
+$$
+
+The quantum Fourier transform is unitary $FT$. $FT_{jk} = \frac{1}{\sqrt{N}} e^{i2\pi jk/N}$.
+
+So the action on an arbitrary state may be written
+$$
+\sum_{j=0}^{N-1}x_j\Ket j \longrightarrow \sum_{k=0}^{N-1}y_k\Ket k
+$$
+And there is another representation of this transformation(Here we set $N=2^n$):
+$$
+\begin{align*}
+\Ket j &\rightarrow \frac{1}{2^{n/2}}\sum_{k=0}^{2^n-1}e^{i2\pi jk/2^n}\Ket k\\
+&= \frac{1}{2^{n/2}}\sum_{k_1=0}^{1} \cdots \sum_{k_n=0}^{1}e^{i2\pi j(\sum_{l=1}^n k_l2^{-l})}\Ket{k_1\cdots k_n}\\
+&= \frac{1}{2^{n/2}}\sum_{k_1=0}^{1} \cdots \sum_{k_n=0}^{1}\bigotimes_{l=1}^{n} e^{i2\pi jk_l2^{-l}}\Ket{k_l}\\
+&= \frac{1}{2^{n/2}}\bigotimes_{l=1}^{n}\left[\sum_{k_l=0}^{1} e^{i2\pi jk_l2^{-l}}\Ket{k_l}\right]\\
+&= \frac{1}{2^{n/2}}\bigotimes_{l=1}^{n}\left[\Ket 0 + e^{i2\pi j2^{-l}}\Ket 1\right]\\
+&= \frac{(\Ket 0 + e^{i2\pi 0.j_n}\Ket 1)(\Ket 0 + e^{i2\pi 0.j_{n-1}j_n}\Ket 1)\cdots (\Ket 0 + e^{i2\pi 0.j_1j_2\cdots j_n}\Ket 1)}{2^{n/2}}
+\end{align*}
+$$
+Here $j = j_12^{n-1}+j_22^{n-2}+\cdots +j_n$ and $0.j_lj_{l+1}\cdots j_m = j_l/2+j_{l+1}/4+ \cdots +j_m/2^{m-l+1}$.
+
+Because of this representation, we can use Hadamard gate and gate $R_k$s to implement quantum Fourier transformation efficiently. Here $R_k$ is
+$$
+\begin{bmatrix}
+1\quad\quad0\\
+0\quad e^{i2\pi/2^k}
+\end{bmatrix}
+$$
+<img src="/Users/jack_wang/Desktop/Screenshot 2020-11-07 at 7.27.17 PM.png" alt="Screenshot 2020-11-07 at 7.27.17 PM" style="zoom:60%;" />
+
+
+
+
+
+
 
 
 
