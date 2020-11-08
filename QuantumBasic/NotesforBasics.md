@@ -258,6 +258,38 @@ $$
 
 That shows we can implement quantum Fourier transformation in $O(n^2)$ quantum circuits, however the most efficient classical Fourier transformation can be implement in $O(n2^n)$.
 
+### 2. Phase estimation
+
+This is the first application of quantum Fourier transformation. 
+
+The problem of phase estimation is:
+
+Suppose a unitary operator $U$ has an eigenvector $\Ket u$ with an eigenvalue $e^{i2\pi \varphi}$, and we want to estimate the unknown $\varphi$. 
+
+The procedure of this algorithm is: 
+
+It uses two registers. First one has $t$ qubits which are $t$ $\Ket 0$s and use Hadamard gates on each wire, and use $j_{th}$ wire as the control wire to put a $controlled-U^{2^j}$ on the second register.
+
+Then the result is 
+$$
+\frac{1}{2^{t/2}}\sum_{j=0}^{2^t-1}e^{i2\pi \varphi j}\Ket j\Ket u
+$$
+Then we can put an inverse of quantum Fourier transform on the first register
+$$
+\frac{1}{2^{t/2}}\sum_{j=0}^{2^t-1}e^{i2\pi \varphi j}\Ket j\Ket u \longrightarrow \Ket{\tilde{\varphi}}\Ket u
+$$
+Then we can measure the first register to get a good estimation of $\varphi$.
+
+Here we can estimate the accuracy and success probability, thus to successfully get $\varphi$ accurate to $n$ bits with probability of success at least $1-\epsilon$ we can just choose $t = n+\lceil \log (2+\frac{1}{2\epsilon})\rceil$.
+
+### 3. Order-finding and Factoring
+
+It shows that we can use phase estimation to compute the order with a high-probability. Basically, this is a type of problems which are called *Hidden Subgroup Problems on Abelian Group*. For that kind of problems there are efficient quantum algorithms based on the algorithm for phase estimate problem.
+
+## Grover's Searching Algorithm
+
+
+
 
 
 
