@@ -220,12 +220,18 @@ $$
 \Ket j \longrightarrow \frac{1}{\sqrt{N}}\sum_{k=0}^{N-1} e^{i2\pi jk/N}\Ket k
 $$
 
+
+
 The quantum Fourier transform is unitary $FT$. $FT_{jk} = \frac{1}{\sqrt{N}} e^{i2\pi jk/N}$.
+
+
 
 So the action on an arbitrary state may be written
 $$
 \sum_{j=0}^{N-1}x_j\Ket j \longrightarrow \sum_{k=0}^{N-1}y_k\Ket k
 $$
+
+
 And there is another representation of this transformation(Here we set $N=2^n$):
 $$
 \begin{align*}
@@ -239,6 +245,8 @@ $$
 $$
 Here $j = j_12^{n-1}+j_22^{n-2}+\cdots +j_n$ and $0.j_lj_{l+1}\cdots j_m = j_l/2+j_{l+1}/4+ \cdots +j_m/2^{m-l+1}$.
 
+
+
 Because of this representation, we can use Hadamard gate and gate $R_k$s to implement quantum Fourier transformation efficiently. Here $R_k$ is
 $$
 \begin{bmatrix}
@@ -248,7 +256,7 @@ $$
 $$
 <img src="/Users/jack_wang/Desktop/Screenshot 2020-11-07 at 7.27.17 PM.png" alt="Screenshot 2020-11-07 at 7.27.17 PM" style="zoom:60%;" />
 
-
+That shows we can implement quantum Fourier transformation in $O(n^2)$ quantum circuits, however the most efficient classical Fourier transformation can be implement in $O(n2^n)$.
 
 
 
