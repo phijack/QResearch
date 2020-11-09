@@ -288,7 +288,31 @@ It shows that we can use phase estimation to compute the order with a high-proba
 
 ## Grover's Searching Algorithm
 
+### 1. Searching Problem Preliminaries
 
+Here we use a quantum oracle $\Ket x \Ket q \xrightarrow{O} \Ket x \Ket{q\oplus f(x)}$ to represent the function $f$ which we want find the $x$ such that $f(x) = 1$.
+$$
+\Ket x(\frac{\Ket 0 - \Ket 1}{\sqrt{2}}) \xrightarrow{O} (-1)^{f(x)}\Ket x (\frac{\Ket 0-\Ket1}{\sqrt 2})\\
+\Ket x \xrightarrow{O} (-1)^{f(x)}\Ket x
+$$
+The second line is the easy representative of the first line.
+
+### 2. Core Subroutine
+
+The main subroutine used in Grover's searching algorithm is called the Grover iteration or $G$, which is:
+
+1. Apply the oracle $O$
+2. Apply the Hadamard transformation $H^{\otimes n}$
+3. Perform a conditional phase shift, with every computational basis state except $\Ket 0$ receiving a phase shift of $-1$, which is $2\Ket 0\Bra 0 -I$.
+4. Apply the Hadamard transform $H^{\otimes n}$ again
+
+The latter three steps is equivalent to $2\Ket \psi \Bra \psi - I$. Here $\Ket \psi = \frac{1}{\sqrt N}\sum_k\Ket k$.
+
+If we divide all $k$ into two types. One type makes $f(x) = 0$, which is $\Ket \alpha = \frac{1}{\sqrt{N-M}}\sum_{f(x)=0} \Ket x$. And $\Ket \beta = \frac{1}{\sqrt{M}}\sum_{f(x)=1} \Ket x$. So $\Ket \psi = \sqrt{\frac{N-M}{N}}\Ket \alpha + \sqrt{\frac{M}{N}}\Ket \beta$. If we define $\cos \frac{\theta}{2} = \sqrt{\frac{N-M}{N}}$, then we can have
+$$
+G\Ket \psi = \cos \frac{3\theta}{2}\Ket \alpha + \sin \frac{3\theta}{2} \Ket \beta
+$$
+So we can do $G$ several times until it is very close to $\Ket \beta$, then do a computational base measure, we can get a solution for the search problem with a high probability.
 
 
 
